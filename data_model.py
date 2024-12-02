@@ -56,6 +56,8 @@ def create_dataloaders(file_path="words_big.txt", data_fraction=1, test_size=0.2
     char_to_idx = {char: idx + 1 for idx, char in enumerate(sorted(chars))}
     char_to_idx['<pad>'] = 0  # Padding token
 
+    print(len(char_to_idx))
+
     # Dataset splitting and dataloader creation
     data_train, data_test = train_test_split(data, test_size=test_size)
     train_dataset = GermanNounDataset(data_train, char_to_idx)
