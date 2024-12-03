@@ -66,7 +66,7 @@ def create_dataloaders(file_path="words_big.txt", data_fraction=1, test_size=0.2
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, collate_fn=lambda x: collate_fn(x))
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, collate_fn=lambda x: collate_fn(x))
 
-    return train_dataloader, test_dataloader
+    return train_dataloader, test_dataloader, char_to_idx
 
 
 # Collate function to pad sequences
